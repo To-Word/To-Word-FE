@@ -1,10 +1,22 @@
 import React from 'react'
-import { View,Text,StyleSheet,Image } from 'react-native';
+import { View,Text,StyleSheet,Image,TouchableOpacity } from 'react-native';
 import Header from '../components/header/Header';
 import MainContainer from "../components/mainContain/MainContainer"
-import Footer from '../components/footer/Footer';
+import Footer from './Footer';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-const Main = () => {
+type RootStackParamList = {
+  Main: undefined,
+  Next: undefined;
+};
+
+type DetailPageNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Next'>;
+
+type Props = {
+  navigation: DetailPageNavigationProp
+}
+
+const Main = ({navigation}:Props) => {
   return (
     <View style={styles.container}>
       <Header></Header>

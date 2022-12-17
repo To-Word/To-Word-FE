@@ -1,27 +1,29 @@
 import React from 'react'
-import { View,Text,StyleSheet, Alert, TouchableOpacity ,Image} from 'react-native'
-import logo from "../../images/logo.png"
+import { View,StyleSheet,TouchableOpacity ,Image} from 'react-native'
+import logo from "../../images/Frame.png"
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Header = () => {
     return (
-    <View style={styles.container}>
-        <Image style={styles.imageContain} source={logo}></Image>
+    <View style={styles.headerContainer}>
+      <Ionicons name="options-sharp" size={24} color="black" />
+      <Image style={styles.imageContain} source={logo}></Image>
     </View>
   )
 }
 const styles = StyleSheet.create({
-    container: {
+    headerContainer: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor:"F49D1A"
+      backgroundColor:"#F49D1A"
     },
     imageContain:{
-        resizeMode:"contain",
-        alignItems:"center",
-        justifyContent:"center",
-        width: 50,
-        height: 200,
+      resizeMode:"contain",
+      alignItems:"center",
+      justifyContent:"center",
+      width: 50,
+      height: 200,
     }
 });
 

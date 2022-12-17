@@ -1,6 +1,5 @@
 import React from 'react'
-import { View,Text,StyleSheet, Alert, TouchableOpacity ,Image} from 'react-native'
-import logo from "../../images/logo.png"
+import { View,StyleSheet} from 'react-native'
 
 const MainContainer = () => {
     return (
@@ -10,10 +9,10 @@ const MainContainer = () => {
 }
 const styles = StyleSheet.create({
     container: {
-      flex: 5,
+      flex: 9,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: "yellow",
+      backgroundColor: "#FEF9EF",
     }
 });
 
