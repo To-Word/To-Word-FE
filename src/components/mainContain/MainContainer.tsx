@@ -1,23 +1,38 @@
-import React from 'react'
-import { View,StyleSheet,TouchableOpacity,Text} from 'react-native'
+import React, { useState } from 'react'
+import { View,StyleSheet,TouchableOpacity,Text,Modal} from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+export interface propsType {
+  modalVisible:boolean;
+}
+
 const MainContainer = () => {
+  const [modalVisible,setModalVisible] = useState<propsType["modalVisible"]>(false)
+  
     return (
     <View style={styles.container}>
-      <Ionicons name="options-sharp" size={34} color="black" style={styles.logoFlex}/>
+      <Ionicons name="options-sharp" size={34} color="black" style={styles.logoFlex} onPress={()=>setModalVisible(!modalVisible)}/>
+      <Modal 
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={()=>{
+          setModalVisible(!modalVisible)
+        }}>
+        <TouchableOpacity onPress={()=>setModalVisible(!modalVisible)}><Text>뒤로가기</Text></TouchableOpacity>
+      </Modal>
       <View style={styles.headContainer}>
         <TouchableOpacity style={styles.headContainerBtn1}><Text style={styles.headText}>E</Text></TouchableOpacity>
         <TouchableOpacity style={styles.headContainerBtn2}><Text style={styles.headText}>I</Text></TouchableOpacity>
       </View>
       <View style={styles.contentContainer}>
         <View style={styles.contents}>
-
         </View>
       </View>
     </View>
   )
 }
+
 const styles = StyleSheet.create({
     container: {
       flex: 9,
